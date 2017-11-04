@@ -14,11 +14,21 @@ public class Movement : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector2(speed * Time.deltaTime + transform.position.x, transform.position.y);
+            transform.position = new Vector3(speed * Time.deltaTime + transform.position.x, transform.position.y, transform.position.z);
+            GetComponent<Animator>().SetBool("walkingRight", true);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            GetComponent<Animator>().SetBool("walkingRight", false);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
+            transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
+            GetComponent<Animator>().SetBool("walkingLeft", true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            GetComponent<Animator>().SetBool("walkingLeft", false);
         }
 
     }
