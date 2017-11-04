@@ -7,8 +7,12 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+<<<<<<< HEAD
         
 	
+=======
+	#HELLOOOO
+>>>>>>> 92e7c1481beea275bdb59c9b4cb71f3c02241458
 	}
 	
 	// Update is called once per frame

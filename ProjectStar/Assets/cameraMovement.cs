@@ -6,7 +6,7 @@ public class cameraMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         transform.position = new Vector3(transform.parent.transform.position.x,
-            transform.parent.transform.position.y, -2);
+            transform.parent.transform.position.y + .425f, -2);
 	
 	}
 	
