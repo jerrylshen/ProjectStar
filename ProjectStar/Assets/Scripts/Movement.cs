@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position = new Vector3(speed * Time.deltaTime + transform.position.x, transform.position.y, transform.position.z);
