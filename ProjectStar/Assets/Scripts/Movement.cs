@@ -4,6 +4,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     public float speed = .5f;
+    public bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +13,14 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (canMove)
+        {
+            checkMovement();
+        }
+    }
 
+    private void checkMovement()
+    {
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position = new Vector3(speed * Time.deltaTime + transform.position.x, transform.position.y, transform.position.z);
@@ -31,6 +39,11 @@ public class Movement : MonoBehaviour {
         {
             GetComponent<Animator>().SetBool("walkingLeft", false);
         }
+    }
 
+    public void setIdleAnimation()
+    {
+        GetComponent<Animator>().SetBool("walkingRight", false);
+        GetComponent<Animator>().SetBool("walkingLeft", false);
     }
 }
